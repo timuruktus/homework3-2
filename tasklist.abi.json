@@ -1,0 +1,83 @@
+{
+	"ABI version": 2,
+	"version": "2.1",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "addTask",
+			"inputs": [
+				{"name":"name","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getTasksAmount",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"uint256"}
+			]
+		},
+		{
+			"name": "getTasks",
+			"inputs": [
+			],
+			"outputs": [
+				{"components":[{"name":"creationTime","type":"uint256"},{"name":"name","type":"string"},{"name":"done","type":"bool"}],"name":"value0","type":"tuple[]"}
+			]
+		},
+		{
+			"name": "getTaskDescription",
+			"inputs": [
+				{"name":"taskKey","type":"int8"}
+			],
+			"outputs": [
+				{"name":"value0","type":"string"}
+			]
+		},
+		{
+			"name": "deleteTask",
+			"inputs": [
+				{"name":"taskKey","type":"int8"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "markTaskDone",
+			"inputs": [
+				{"name":"taskKey","type":"int8"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "timestamp",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"timestamp","type":"uint32"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"timestamp","type":"uint32"},
+		{"components":[{"name":"creationTime","type":"uint256"},{"name":"name","type":"string"},{"name":"done","type":"bool"}],"name":"taskMap","type":"map(int8,tuple)"},
+		{"name":"taskKeys","type":"int8[]"}
+	]
+}
